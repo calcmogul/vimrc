@@ -28,6 +28,7 @@ set smartindent
 syn on
 colorscheme hybrid
 set background=dark
+autocmd BufNewFile,BufRead *.inc set syntax=cpp
 
 " Show filename in titlebar of window
 set title
@@ -65,9 +66,12 @@ vmap <leader>p "+p
 vmap <leader>P "+P
 
 " For cycling through and deleting buffers
-nnoremap <silent> <leader><Left> :bp<CR>
-nnoremap <silent> <leader><Right> :bn<CR>
-nnoremap <silent> <leader><Down> :bd<CR>
+nnoremap <silent> <A-Left> :bp<CR>
+inoremap <silent> <A-Left> <Esc>:bp<CR>a
+nnoremap <silent> <A-Right> :bn<CR>
+inoremap <silent> <A-Right> <Esc>:bn<CR>a
+nnoremap <silent> <A-Down> :bd<CR>
+inoremap <silent> <A-Down> <Esc>:bd<CR>a
 
 " Reload buffer when external changes detected
 set autoread

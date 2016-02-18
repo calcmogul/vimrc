@@ -1,3 +1,44 @@
+" Set editor config root
+if has('nvim')
+    let s:editor_root=expand("~/.config/nvim")
+else
+    let s:editor_root=expand("~/.vim")
+endif
+
+" Setting up Vundle - the vim plugin bundler
+let vundle_installed=1
+let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
+if !filereadable(vundle_readme)
+    echo "Installing Vundle..."
+    echo ""
+    " silent execute "! mkdir -p ~/." . s:editor_path_name . "/bundle"
+    silent call mkdir(s:editor_root . '/bundle', "p")
+    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/vundle"
+    let vundle_installed=0
+endif
+let &rtp = &rtp . ',' . s:editor_root . '/bundle/vundle/'
+call vundle#rc(s:editor_root . '/bundle')
+
+" Syntax highlighting
+Plugin 'w0ng/vim-hybrid'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" Markdown support
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Git support
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+set updatetime=250
+
+" Install bundles
+if vundle_installed == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+
 " Use vim settings instead of vi settings
 set nocompatible
 
@@ -18,8 +59,9 @@ set mouse=
 set ttyfast
 
 " Indentation
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=4
+set softtabstop=2
 set expandtab
 set autoindent
 set smartindent
@@ -43,7 +85,7 @@ nnoremap ; :
 
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
+command -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -87,14 +129,29 @@ set autoread
 set viminfo=h,'500,<10000,s1000,/1000,:1000
 
 " statusline
-set statusline=%t\      " tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
-set statusline+=%{&ff}] " file format
-set statusline+=%h      " help file flag
-set statusline+=%m      " modified flag
-set statusline+=%r      " read only flag
-set statusline+=%y      " filetype
-set statusline+=%=      " left/right separator
-set statusline+=%c,     " cursor column
-set statusline+=%l/%L   " cursor line/total lines
-set statusline+=\ %P    " percent through file
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#default#layout = [
+    \ [ 'a', 'b', 'c' ],
+    \ [ 'x', 'y', 'z', 'error', 'warning' ]
+    \ ]

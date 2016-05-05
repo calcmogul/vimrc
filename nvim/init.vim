@@ -32,6 +32,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
+Plugin 'tpope/vim-surround'
+Plugin 'rust-lang/rust.vim'
+
 " Install bundles
 if vundle_installed == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -60,7 +63,7 @@ set ttyfast
 
 " Indentation
 set shiftwidth=2
-set tabstop=4
+set tabstop=2
 set softtabstop=2
 set expandtab
 set autoindent

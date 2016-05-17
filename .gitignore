@@ -1,3 +1,5 @@
 *.swp
+bundle
 .netrwhist
 shada
+undo

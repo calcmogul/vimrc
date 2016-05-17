@@ -81,7 +81,7 @@ set titleold=
 
 " Make the 81st column stand out
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%81v', 80)
 
 " Reduce number of keystrokes
 nnoremap ; :
@@ -158,3 +158,19 @@ let g:airline#extensions#default#layout = [
     \ [ 'a', 'b', 'c' ],
     \ [ 'x', 'y', 'z', 'error', 'warning' ]
     \ ]
+
+" Save undo's after file closes
+set undofile
+
+" Where to save undo histories
+if has('nvim')
+    set undodir=$HOME/.config/nvim/undo
+else
+    set undodir=$HOME/.vim/undo
+endif
+
+" How many undos
+set undolevels=10000000
+
+" Number of lines to save for undo
+set undoreload=10000000

@@ -22,6 +22,7 @@ call vundle#rc(s:editor_root . '/bundle')
 " Syntax highlighting
 Plugin 'w0ng/vim-hybrid'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rust-lang/rust.vim'
 
 " Markdown support
 Plugin 'godlygeek/tabular'
@@ -33,7 +34,6 @@ Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
 Plugin 'tpope/vim-surround'
-Plugin 'rust-lang/rust.vim'
 
 " Install bundles
 if vundle_installed == 0

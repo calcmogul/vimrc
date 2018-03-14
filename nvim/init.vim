@@ -74,6 +74,7 @@ syn on
 colorscheme hybrid
 set background=dark
 autocmd BufNewFile,BufRead *.inc set syntax=cpp
+autocmd BufNewFile,BufRead *.tex set syntax=tex
 
 " Show filename in titlebar of window
 set title

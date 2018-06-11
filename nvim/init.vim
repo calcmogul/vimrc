@@ -26,7 +26,6 @@ Plugin 'rust-lang/rust.vim'
 
 " Markdown support
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 " Git support
 Plugin 'tpope/vim-fugitive'

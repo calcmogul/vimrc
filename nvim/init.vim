@@ -86,8 +86,8 @@ call matchadd('ColorColumn', '\%81v', 80)
 " Reduce number of keystrokes
 nnoremap ; :
 
-" If the current buffer has never been saved, it will have no name,
-" call the file browser to save it, otherwise just save it.
+" If the current buffer has never been saved, it will have no name.
+" Call the file browser to save it, otherwise just save it.
 command -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
@@ -159,7 +159,7 @@ let g:airline#extensions#default#layout = [
     \ [ 'x', 'y', 'z', 'error', 'warning' ]
     \ ]
 
-" Save undo's after file closes
+" Save undos after file closes
 set undofile
 
 " Where to save undo histories

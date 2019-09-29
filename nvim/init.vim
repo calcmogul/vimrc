@@ -32,6 +32,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
+Plugin 'lervag/vimtex'
+
 Plugin 'tpope/vim-surround'
 
 " Install bundles

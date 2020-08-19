@@ -33,6 +33,7 @@ Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
 Plugin 'lervag/vimtex'
+let g:tex_flavor = 'xelatex'
 
 Plugin 'tpope/vim-surround'
 

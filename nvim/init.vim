@@ -35,6 +35,9 @@ set updatetime=250
 Plugin 'lervag/vimtex'
 let g:tex_flavor = 'xelatex'
 
+" clangd
+Plugin 'neoclide/coc.nvim'
+
 Plugin 'tpope/vim-surround'
 
 " Install bundles

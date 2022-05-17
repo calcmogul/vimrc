@@ -23,6 +23,7 @@ call vundle#rc(s:editor_root . '/bundle')
 Plugin 'w0ng/vim-hybrid'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rust-lang/rust.vim'
+Plugin 'udalov/kotlin-vim'
 
 " Markdown support
 Plugin 'godlygeek/tabular'

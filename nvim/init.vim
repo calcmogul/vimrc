@@ -219,6 +219,7 @@ set smartindent
 syn on
 colorscheme hybrid
 set background=dark
+autocmd BufNewFile,BufRead *.inc set filetype=cpp
 autocmd BufNewFile,BufRead *.inc set syntax=cpp
 autocmd BufNewFile,BufRead *.tex set syntax=tex
 

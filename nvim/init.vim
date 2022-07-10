@@ -5,39 +5,41 @@ else
     let s:editor_root=expand("~/.vim")
 endif
 
-" Setting up Vundle - the vim plugin bundler
-let vundle_installed=1
-let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
-if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    " silent execute "! mkdir -p ~/." . s:editor_path_name . "/bundle"
-    silent call mkdir(s:editor_root . '/bundle', "p")
-    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/vundle"
-    let vundle_installed=0
+" Set up vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-let &rtp = &rtp . ',' . s:editor_root . '/bundle/vundle/'
-call vundle#rc(s:editor_root . '/bundle')
+
+call plug#begin()
 
 " Syntax highlighting
-Plugin 'w0ng/vim-hybrid'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'rust-lang/rust.vim'
-Plugin 'udalov/kotlin-vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rust-lang/rust.vim'
+Plug 'udalov/kotlin-vim'
 
 " Markdown support
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 " Git support
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 set updatetime=250
 
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 let g:tex_flavor = 'xelatex'
 
 " clangd
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" statusline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Initialize plugin system
+call plug#end()
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -179,15 +181,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-Plugin 'tpope/vim-surround'
-
-" Install bundles
-if vundle_installed == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
-
 " Use vim settings instead of vi settings
 set nocompatible
 
@@ -278,10 +271,6 @@ set autoread
 "           | |    |      |     |     |
 "           v v    v      v     v     v
 set viminfo=h,'500,<10000,s1000,/1000,:1000
-
-" statusline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 let g:airline#extensions#tabline#enabled = 1
 

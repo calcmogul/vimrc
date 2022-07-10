@@ -1,5 +1,4 @@
-*.swp
-bundle
-.netrwhist
-shada
-undo
+nvim/.netrwhist
+nvim/autoload/plug.vim
+nvim/nvim
+nvim/undo/

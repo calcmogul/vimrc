@@ -31,8 +31,8 @@ set updatetime=250
 Plug 'lervag/vimtex'
 let g:tex_flavor = 'xelatex'
 
-" clangd
-let g:coc_global_extensions = ['coc-clangd']
+" coc setup
+let g:coc_global_extensions = ['coc-clangd', 'coc-python']
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " statusline

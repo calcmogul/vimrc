@@ -6,8 +6,11 @@ This is my vim configuration.
 
 Perform the following steps.
 
-1. Run `./setup.sh`.
-2. Open vim/nvim.
-3. Type `:PluginInstall`.
-4. Close the resulting window with `:q` when it completes.
-5. Repeat steps 3 and 4 once to ensure the theme and statusline plugins install completely.
+1. Install clang (for clangd) and pylint
+2. Run `./setup.sh`
+3. Open vim/nvim
+4. Type `:PlugInstall`
+5. Close the resulting window with `:q` when it completes
+6. Repeat steps 3 and 4 once to ensure the theme and statusline plugins install completely
+
+Updates can be installed via `:PlugUpdate`.

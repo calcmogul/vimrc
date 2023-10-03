@@ -1,7 +1,0 @@
-{
-  "inlayHint.enable": false,
-  "java.autobuild.enabled": false,
-  "java.compile.nullAnalysis.mode": "automatic",
-  "java.configuration.updateBuildConfiguration": "automatic",
-  "java.enabled": false
-}

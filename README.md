@@ -7,7 +7,7 @@ This is my vim configuration.
 Perform the following steps.
 
 1. Install clang (for clangd) and pylint
-2. Run `./setup.sh`
+2. Run `./setup-vim.sh` or `./setup-nvim.sh`
 3. Open vim/nvim
 4. Type `:PlugInstall`
 5. Close the resulting window with `:q` when it completes

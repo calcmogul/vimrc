@@ -41,6 +41,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " hexmode
 Plug 'fidian/hexmode'
+let g:hexmode_patterns = '*.bin,*.exe,*.dat,*.o'
 
 " Initialize plugin system
 call plug#end()

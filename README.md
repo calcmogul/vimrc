@@ -6,7 +6,7 @@ This is my vim configuration.
 
 Perform the following steps.
 
-1. Install clang (for clangd) and pylint
+1. Install clang (for clangd), pylint, and NodeJS (for coc.nvim intellisense)
 2. Run `./setup-vim.sh` or `./setup-nvim.sh`
 3. Open vim/nvim
 4. Type `:PlugInstall`

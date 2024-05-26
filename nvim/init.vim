@@ -229,8 +229,7 @@ set title
 set titleold=
 
 " Make the 81st column stand out
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 80)
+set colorcolumn=81
 
 " Reduce number of keystrokes
 nnoremap ; :

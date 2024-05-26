@@ -1,4 +1,5 @@
 {
+  "inlayHint.enable": false,
   "rust-analyzer.enable": {
     "type": "boolean",
     "markdownDescription": "Enable `coc-rust-analyzer`",

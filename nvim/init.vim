@@ -228,8 +228,8 @@ autocmd BufNewFile,BufRead *.tex set syntax=tex
 set title
 set titleold=
 
-" Make the 81st column stand out
-set colorcolumn=81
+" Color line length limits
+set colorcolumn=81,101
 
 " Reduce number of keystrokes
 nnoremap ; :

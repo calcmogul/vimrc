@@ -1,3 +1,4 @@
 {
-  "inlayHint.enable": false
+  "inlayHint.enable": false,
+  "java.autobuild.enabled": false
 }

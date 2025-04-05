@@ -32,7 +32,7 @@ Plug 'lervag/vimtex'
 let g:tex_flavor = 'xelatex'
 
 " coc setup
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-python', 'coc-rust-analyzer', 'coc-sh', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pyright', 'coc-rust-analyzer', 'coc-sh', 'coc-tsserver']
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " statusline

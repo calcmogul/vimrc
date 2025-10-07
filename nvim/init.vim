@@ -1,17 +1,3 @@
-" Set editor config root
-if has('nvim')
-    let s:editor_root=expand("~/.config/nvim")
-else
-    let s:editor_root=expand("~/.vim")
-endif
-
-" Set up vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 call plug#begin()
 
 " Syntax highlighting
@@ -307,11 +293,7 @@ let g:airline#extensions#default#layout = [
 set undofile
 
 " Where to save undo histories
-if has('nvim')
-    set undodir=$HOME/.config/nvim/undo
-else
-    set undodir=$HOME/.vim/undo
-endif
+set undodir=$HOME/.config/nvim/undo
 
 " How many undos
 set undolevels=10000000

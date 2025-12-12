@@ -2,7 +2,7 @@ call plug#begin()
 
 " Syntax highlighting
 Plug 'w0ng/vim-hybrid'
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'bfrg/vim-c-cpp-modern'
 Plug 'rust-lang/rust.vim'
 Plug 'udalov/kotlin-vim'
 

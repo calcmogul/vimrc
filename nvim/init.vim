@@ -215,7 +215,7 @@ set title
 set titleold=
 
 " Color line length limits
-set colorcolumn=81,101
+set colorcolumn=81,101,121
 
 " Reduce number of keystrokes
 nnoremap ; :
